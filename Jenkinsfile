@@ -23,8 +23,7 @@ script {
  script {
  sh "docker rm -f ${CONTAINER_NAME} || true"
  sh "fuser -k 9191/tcp || true"
- sh "docker run -d -p ${PORT_MAPPING} --name ${CONTAINER_NAME}
-${IMAGE_NAME}"
+ sh "docker run -d -p ${PORT_MAPPING} --name ${CONTAINER_NAME} ${IMAGE_NAME}"
  sh "docker ps | grep ${CONTAINER_NAME}"
  }
  }
